@@ -1,0 +1,15 @@
+int led = 15;
+#define potent A0
+
+void setup() {
+  pinMode(led,OUTPUT);
+  pinMode(potent, INPUT); 
+}
+
+void loop() {
+  
+  int x;
+  x = analogRead(potent)/4;
+  analogWrite(led,x);
+
+}
