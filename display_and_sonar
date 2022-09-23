@@ -1,0 +1,30 @@
+#include <Ultrasonic.h>
+#include <SPI.h> 
+#include <Wire.h> 
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+int trig =15;
+int echo=13;
+int dist;
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 32
+#define SCREEN_ADDRESS 0x3C
+#define RESET -1
+Adafruit_SSD1306 display(SCREEN_WIDTH,SCREEN_HEIGHT, &Wire, RESET);
+Ultrasonic ultrasonic(trig,echo);
+void setup() {
+  Serial.begin(9600);
+  display.begin(SSD1306_SWITCHCAPVCC,SCREEN_ADDRESS);
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+}
+
+void loop() {
+    display.clearDisplay();
+    display.setCursor(0,0);
+    dist = ultrasonic.distanceRead();
+    display.println(dist);
+    display.display();
+    delay(1000);
+}
