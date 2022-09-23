@@ -1,0 +1,29 @@
+int button = 4;
+int led = 15;
+volatile int count =0;
+void setup() 
+{
+  pinMode(led, OUTPUT);
+  pinMode(button, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(4), btn, FALLING);
+}
+IRAM_ATTR void btn()
+{
+  count ++;
+}
+void loop()
+{
+
+  if (count ==1)
+  {
+    digitalWrite(led, HIGH);
+  }
+  else 
+  {
+    digitalWrite(led, LOW);
+  }  
+  if (count ==2)
+  {
+    count = 0;
+  }
+}
