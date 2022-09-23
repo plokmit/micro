@@ -1,0 +1,15 @@
+#include <Ultrasonic.h>
+int speak = 15;
+int trig = 13;
+int echo = 12;
+int dist;
+Ultrasonic ultrasonic (trig , echo);
+void setup() {
+  pinMode(speak, OUTPUT);
+}
+
+void loop() {
+  dist = ultrasonic.distanceRead();
+  tone(speak, dist*10);
+
+}
