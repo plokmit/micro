@@ -1,0 +1,31 @@
+int p = 15;
+void setup() {
+  pinMode(p,OUTPUT);
+
+}
+
+void loop() {
+ tone(p,392);
+ delay(500);
+ tone(p,329.63);
+ delay(500);
+ tone(p,329.63);
+ delay(500);
+ tone(p,392);
+ delay(500);
+ tone(p,329.63);
+ delay(500);
+ tone(p,329.63);
+ delay(500); //ми 2
+ tone(p,392);
+ delay(500);//соль
+ tone(p,349.23);
+ delay(500);//фа
+ tone(p,329.63);
+ delay(500);//ми
+ tone(p,293.66);
+ delay(500);//ре
+ tone(p,261.63);
+ delay(500);
+
+}
