@@ -1,0 +1,20 @@
+
+#define LED_GPIO 2 // GPIO2/TXD01
+   int br =0 ;
+  int count = 5; 
+void setup() {
+  pinMode(LED_GPIO, OUTPUT);
+
+}
+
+void loop() { 
+   analogWrite(LED_GPIO,br);
+   br=br+count;
+   if(br==0||br==255)
+   {
+    count=-count;
+   }
+   delay(30);
+   }
+   
+  
