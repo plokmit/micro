@@ -1,0 +1,19 @@
+#define res A0
+int led =15;
+double a;
+void setup() {
+  pinMode(led,OUTPUT);
+  pinMode(res,INPUT);
+
+}
+
+void loop() {
+  a=analogRead(res);
+  if(a<900){
+    digitalWrite(led, HIGH);
+  }
+  else{
+    digitalWrite(led,LOW);
+  }
+
+}
